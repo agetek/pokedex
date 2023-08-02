@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+    <link rel="manifest" href="img/fav/site.webmanifest">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.js"></script>
+    <script src="var.js"></script>
+    <script src="script.js"></script>
+    <title>Pokedex</title>
+</head>
+
+<body onload="start()">
+    <div class="top" id="top"><img src="img/Poke_Ball_icon.svg" alt="" class="logo" onclick="start()">
+        <input type="search"  id="searchfield" class="searchfield" placeholder="Suche nach Pokemon" onchange="executeSearch()">
+    </div>
+    <div class="card_container" id="card_container">
+    </div>
+    <div class="card_zoom_layout hide" id="card_zoom_layout">
+        <div class="card_zoom_bg hide" id="card_zoom_bg" onclick="closePokemon()"></div>
+        <div class="card_zoom" id="card_zoom">
+            <div class="card_zoom_top" id="card_zoom_top">    
+            </div>
+            <div class="card_zoom_middle" id="card_zoom_middle"></div>
+            <div class="card_zoom_bottom" id="card_zoom_bottom"></div>
+        </div>
+        <div class="card_zoom_previous" id="card_zoom_previous" onclick="zoomNext()"></div>
+        <div class="card_zoom_next" id="card_zoom_next" onclick="zoomPrevious()"></div>
+        <div class="close" onclick="closePokemon()"></div>
+    </div>
+    <div class="footer" id="footer">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,461 @@
+body {
+    margin: 0;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(20, 20, 20);
+    flex-direction: column;
+    color: white;
+    align-items: center;
+}
+
+div {
+    display: flex;
+}
+
+.footer {
+    background-color: rgb(20, 20, 20);
+    height: 60px;
+    align-items: flex-end;
+}
+
+.nav {
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.next {
+    background-color: rgb(120, 120, 120);
+    height: 40px;
+    border-radius: 20px;
+    width: 100px;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.img_nav {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+.previous {
+    background-color: rgb(120, 120, 120);
+    height: 40px;
+    border-radius: 20px;
+    width: 100px;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.card_container {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pokemon_card {
+    flex-direction: column;
+    width: 160px;
+    height: 160px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+.pokemon_card:hover {
+    scale: 1.1;
+    filter: brightness(1.1);
+    transition: 125ms all ease-in-out;
+}
+
+.type_1 {
+    height: 80px;
+    width: 160px;
+    border-radius: 15px 15px 0 0;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+}
+
+.type_2 {
+    height: 80px;
+    width: 160px;
+    border-radius: 0 0 15px 15px;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+}
+
+.card_layout {
+    flex-direction: column;
+    cursor: pointer;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mt-120 {
+    margin-top: -160px;
+}
+
+.pokeimg {
+    border-radius: 15px;
+    width: 120px;
+    height: 120px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.pokename {
+    text-shadow: 1px 1px 2px #000;
+    font-weight: bold;
+    color: white;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: -25px;
+}
+
+.rotate {
+    transform: rotate(-90deg);
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.0);
+    width: 60px;
+    height: 12px;
+    margin-left: -18px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.card_zoom_bg {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.card_zoom {
+    position: fixed;
+    height: calc(100vh - 40px);
+    width: 70vh;
+    background-color: white;
+    border-radius: 30px;
+    margin: 20px;
+    flex-direction: column;
+}
+
+.card_zoom_layout {
+    position: fixed;
+    height: calc(100vh);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card_zoom_top {
+    border-radius: 30px 30px 0 0;
+    height: calc(30vh - 20px);
+    width: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.card_zoom_middle {
+    height: 10vh;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.card_zoom_bottom {
+    border-radius: 0 0 30px 30px;
+    height: calc(60vh - 20px);
+    width: 100%;
+    background-color: white;
+    color: black;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+.card_zoom_previous {
+    position: fixed;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 10vh;
+    align-items: center;
+    left: 20vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(img/chevron-left.svg);
+    cursor: pointer;
+}
+
+.card_zoom_next {
+    position: fixed;
+    width: 20vh;
+    height: 20vh;
+    right: 20vh;
+    border-radius: 10vh;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(img/chevron-right.svg);
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.base_stats_outer {
+    border-radius: 0 0 30px 30px;
+    height: calc(60vh - 100px);
+    width: 60vh;
+    background-color: white;
+    color: black;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    cursor: pointer;
+    font-weight: bold;
+    color: #999;
+}
+
+/* Create an active/current tablink class */
+.active {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    max-width: 95%;
+    height: 100%;
+}
+
+.tablinks {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.show {
+    display: flex;
+}
+
+.evo_img {
+    width: 100px;
+    height: 100px;
+}
+
+.evo {
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.evo_outer {
+    flex-direction: row;
+    border-radius: 0 0 30px 30px;
+    height: calc(60vh - 100px);
+}
+
+.close {
+    display: none;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    right: 20px;
+    top: 20px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(img/close.svg);
+    cursor: pointer;
+}
+
+.zoom_type {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.4);
+    left: 20px;
+    top: 10px;
+    justify-content: flex-start;
+    width: 0px;
+}
+
+.zoom_name {
+    color: white;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 6vh;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.top {
+    width: 100%;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.searchfield {
+    display: flex;
+    background: white;
+    border: 0px solid rgb(140, 153, 155);
+    border-radius: 20px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    height: 40px;
+    outline: none;
+    padding: 0;
+    min-width: 70vw;
+    padding: 5px 20px;
+    font-size: 15px;
+}
+
+@media(max-width: 1024px) {
+
+    .close {
+        display: flex;
+    }
+
+    .card_zoom {
+        border-radius: 0;
+    }
+
+    .card_zoom_bg {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .card_zoom {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background-color: white;
+        border-radius: 0;
+        margin: 20px;
+        flex-direction: column;
+    }
+
+    .card_zoom_layout {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .card_zoom_top {
+        border-radius: 0 0 0 0;
+        height: calc(30vh);
+        width: 100%;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .card_zoom_middle {
+        height: 10vh;
+        width: 100%;
+        justify-content: flex-start;
+
+    }
+
+    .card_zoom_bottom {
+        border-radius: 0 0 0 0;
+        height: calc(60vh);
+        width: 100%;
+        background-color: white;
+        color: black;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 20px;
+    }
+
+    .card_zoom_previous {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        left: 20px;
+        bottom: 20px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(img/chevron-left-mobile.svg);
+        cursor: pointer;
+    }
+
+    .card_zoom_next {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        right: 20px;
+        bottom: 20px;
+        border-radius: 25px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(img/chevron-right-mobile.svg);
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .base_stats_outer {
+        min-width: 100%;
+        border-radius: 0;
+        background-color: white;
+        color: black;
+        align-items: center;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #base_stats {
+        min-width: 100%;
+        border-radius: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
